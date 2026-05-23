@@ -663,7 +663,7 @@ h1 span { color: var(--bright-violet); text-shadow: 0 0 15px rgba(115, 29, 255, 
     box-shadow: 0 0 10px rgba(115, 29, 255, 0.2);
     
     /* Formatação */
-    padding: 6px 16px;
+    padding: 6px 15px;
     border-radius: 100px; /* Deixa as pontas totalmente arredondadas (estilo pílula) */
     font-size: 22px;      /* Tamanho ideal para etiquetas */
     font-weight: 800;
