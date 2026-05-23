@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <title>Avaliações - Canhete's Barbearia</title>
+  <link rel="icon" href="favicon.jpg" type="image/jpg">
+  <link rel="stylesheet" href="styleavaliacoes.css">
+</head>
+
+<body>
+
+  <a href="https://wa.me/5514997406083" class="whatsapp-fixo" target="_blank">
+    <img src="whatsapp.png" alt="WhatsApp">
+  </a>
+
+  <header class="header">
+  <div id="menuLateral" class="menu-lateral">
+    <a href="https://lemereis.online/barbeariaservicos">Serviços</a>
+    <a href="https://lemereis.online/barbeariasobrenos">Sobre Nós</a>
+    <a href="https://api.whatsapp.com/send/?phone=5514997406083&text&type=phone_number&app_absent=0">Contato</a>
+    <a href="https://lemereis.online/barbeariaavaliacoes">Avaliações</a>
+	<a href="https://lemereis.online/barbearialocalizacao">Localização</a>
+  </div>
+
+  <div id="overlay" class="overlay" onclick="fecharMenu()"></div>
+
+  <div class="menu" onclick="toggleMenu()">&#9776;</div>
+
+  <img src="canhetes.png" alt="Logo da barbearia" class="logo">
+</header>
+
+  <h1 class="titulo-principal">Avaliações</h1>
+
+  <!-- CARROSSEL 1 -->
+  <div class="secao-carrossel">
+    <h2 class="titulo-carrossel">Corte de Cabelo</h2>
+    
+    <div class="carrossel-container">
+      <button class="btn-seta esquerda" onclick="mudarSlide(1, -1)">&#10094;</button>
+      
+      <div class="carrossel-avaliacoes">
+        <div class="avaliacao ativa" id="slide-1-1">
+          <div class="estrelas">
+            <span class="estrela">★</span>
+            <span class="estrela">★</span>
+            <span class="estrela">★</span>
+            <span class="estrela">★</span>
+            <span class="estrela">★</span>
+          </div>
+          <h3 class="nome-avaliador">João Silva</h3>
+          <p class="comentario-avaliacao">"Excelente corte! O barbeiro foi muito atencioso e o resultado ficou perfeito. Voltarei com certeza!"</p>
+        </div>
+
+        <div class="avaliacao" id="slide-1-2">
+          <div class="estrelas">
+            <span class="estrela">★</span>
+            <span class="estrela">★</span>
+            <span class="estrela">★</span>
+            <span class="estrela">★</span>
+            <span class="estrela vazia">★</span>
+          </div>
+          <h3 class="nome-avaliador">Carlos Mendes</h3>
+          <p class="comentario-avaliacao">"Muito bom! Ambiente limpo e profissional. Recomendo para todos os meus amigos."</p>
+        </div>
+
+        <div class="avaliacao" id="slide-1-3">
+          <div class="estrelas">
+            <span class="estrela">★</span>
+            <span class="estrela">★</span>
+            <span class="estrela">★</span>
+            <span class="estrela">★</span>
+            <span class="estrela">★</span>
+          </div>
+          <h3 class="nome-avaliador">Pedro Costa</h3>
+          <p class="comentario-avaliacao">"Melhor barbearia da região! Sempre saio satisfeito com o atendimento e qualidade."</p>
+        </div>
+
+        <div class="avaliacao" id="slide-1-4">
+          <div class="estrelas">
+            <span class="estrela">★</span>
+            <span class="estrela">★</span>
+            <span class="estrela">★</span>
+            <span class="estrela">★</span>
+            <span class="estrela">★</span>
+          </div>
+          <h3 class="nome-avaliador">Lucas Ferreira</h3>
+          <p class="comentario-avaliacao">"Profissional muito atencioso! Fez exatamente o que pedi. Preço justo e qualidade garantida."</p>
+        </div>
+      </div>
+
+      <button class="btn-seta direita" onclick="mudarSlide(1, 1)">&#10095;</button>
+    </div>
+  </div>
+
+  <!-- CARROSSEL 2 -->
+  <div class="secao-carrossel">
+    <h2 class="titulo-carrossel">Barba</h2>
+    
+    <div class="carrossel-container">
+      <button class="btn-seta esquerda" onclick="mudarSlide(2, -1)">&#10094;</button>
+      
+      <div class="carrossel-avaliacoes">
+        <div class="avaliacao ativa" id="slide-2-1">
+          <div class="estrelas">
+            <span class="estrela">★</span>
+            <span class="estrela">★</span>
+            <span class="estrela">★</span>
+            <span class="estrela">★</span>
+            <span class="estrela">★</span>
+          </div>
+          <h3 class="nome-avaliador">Rafael Oliveira</h3>
+          <p class="comentario-avaliacao">"Barboterapia incrível! Saí completamente relaxado. O atendimento foi top demais!"</p>
+        </div>
+
+        <div class="avaliacao" id="slide-2-2">
+          <div class="estrelas">
+            <span class="estrela">★</span>
+            <span class="estrela">★</span>
+            <span class="estrela">★</span>
+            <span class="estrela">★</span>
+            <span class="estrela">★</span>
+          </div>
+          <h3 class="nome-avaliador">Gustavo Alves</h3>
+          <p class="comentario-avaliacao">"Minha barba nunca ficou tão bem alinhada! Voltarei toda semana. Muito recomendo!"</p>
+        </div>
+
+        <div class="avaliacao" id="slide-2-3">
+          <div class="estrelas">
+            <span class="estrela">★</span>
+            <span class="estrela">★</span>
+            <span class="estrela">★</span>
+            <span class="estrela">★</span>
+            <span class="estrela vazia">★</span>
+          </div>
+          <h3 class="nome-avaliador">Thiago Rocha</h3>
+          <p class="comentario-avaliacao">"Ótimo trabalho! Profissional experiente que sabe o que faz. Preço acessível."</p>
+        </div>
+
+        <div class="avaliacao" id="slide-2-4">
+          <div class="estrelas">
+            <span class="estrela">★</span>
+            <span class="estrela">★</span>
+            <span class="estrela">★</span>
+            <span class="estrela">★</span>
+            <span class="estrela">★</span>
+          </div>
+          <h3 class="nome-avaliador">Marcelo Santos</h3>
+          <p class="comentario-avaliacao">"Excelente! Ambiente aconchegante e profissionais muito atenciosos. Recomendo!"</p>
+        </div>
+      </div>
+
+      <button class="btn-seta direita" onclick="mudarSlide(2, 1)">&#10095;</button>
+    </div>
+  </div>
+
+  <!-- CARROSSEL 3 -->
+  <div class="secao-carrossel">
+    <h2 class="titulo-carrossel">Limpeza de Pele</h2>
+    
+    <div class="carrossel-container">
+      <button class="btn-seta esquerda" onclick="mudarSlide(3, -1)">&#10094;</button>
+      
+      <div class="carrossel-avaliacoes">
+        <div class="avaliacao ativa" id="slide-3-1">
+          <div class="estrelas">
+            <span class="estrela">★</span>
+            <span class="estrela">★</span>
+            <span class="estrela">★</span>
+            <span class="estrela">★</span>
+            <span class="estrela">★</span>
+          </div>
+          <h3 class="nome-avaliador">André Martins</h3>
+          <p class="comentario-avaliacao">"Pele muito mais limpa e saudável! A máscara black foi incrível. Voltarei em breve!"</p>
+        </div>
+
+        <div class="avaliacao" id="slide-3-2">
+          <div class="estrelas">
+            <span class="estrela">★</span>
+            <span class="estrela">★</span>
+            <span class="estrela">★</span>
+            <span class="estrela">★</span>
+            <span class="estrela">★</span>
+          </div>
+          <h3 class="nome-avaliador">Felipe Gomes</h3>
+          <p class="comentario-avaliacao">"Profissional muito competente! Explicou todo o processo e o resultado foi excelente."</p>
+        </div>
+
+        <div class="avaliacao" id="slide-3-3">
+          <div class="estrelas">
+            <span class="estrela">★</span>
+            <span class="estrela">★</span>
+            <span class="estrela">★</span>
+            <span class="estrela">★</span>
+            <span class="estrela vazia">★</span>
+          </div>
+          <h3 class="nome-avaliador">Bruno Dias</h3>
+          <p class="comentario-avaliacao">"Muito bom! Pele ficou muito melhor. Recomendo para quem quer cuidar da pele."</p>
+        </div>
+
+        <div class="avaliacao" id="slide-3-4">
+          <div class="estrelas">
+            <span class="estrela">★</span>
+            <span class="estrela">★</span>
+            <span class="estrela">★</span>
+            <span class="estrela">★</span>
+            <span class="estrela">★</span>
+          </div>
+          <h3 class="nome-avaliador">Rodrigo Pereira</h3>
+          <p class="comentario-avaliacao">"Excelente atendimento! Saí com a pele muito mais limpa e hidratada. Muito satisfeito!"</p>
+        </div>
+      </div>
+
+      <button class="btn-seta direita" onclick="mudarSlide(3, 1)">&#10095;</button>
+    </div>
+  </div>
+
+  <script src="scriptavaliacoes.js"></script>
+</body>
+</html>
