@@ -1,0 +1,1097 @@
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+:root {
+    --bg-color: #05020a;
+    --deep-purple: #3a1d73;
+    --bright-violet: #731dff;
+    --text-color: #ffffff;
+    --text-secondary: #b1a2d4;
+}
+
+body {
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    font-family: 'Inter', sans-serif;
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+.container {
+    max-width: 1450px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Header Grid */
+.header-main {
+    padding: 15px 0;
+}
+
+.header-grid {
+    display: grid;
+    grid-template-columns: 1fr 2fr 1fr;
+    align-items: center;
+}
+
+.menu-col { display: flex; justify-content: flex-start; }
+.logo-col { display: flex; justify-content: center; }
+
+.logo-img {
+    height: 60px;
+    width: auto;
+}
+
+/* Promo Badge Corrigida */
+.promo-badge {
+    width: 100%;
+    background-color: var(--deep-purple);
+    border-bottom: 2px solid var(--bright-violet);
+	border-top: 2px solid var(--bright-violet);
+    padding: 7px 0;
+    display: flex;
+    justify-content: center;
+    color: var(--bright-violet);
+    font-size: 14px;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+	margin-top: 15px;
+}
+
+/* Botão Hambúrguer Corrigido */
+.menu-btn {
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    z-index: 1001;
+}
+
+.menu-btn span {
+    width: 30px;
+    height: 3px;
+    background-color: var(--bright-violet);
+    border-radius: 10px;
+    transition: 0.3s;
+    box-shadow: 0 0 8px var(--bright-violet);
+}
+
+/* Sidebar */
+.sidebar {
+    position: fixed;
+    top: 0;
+    left: -280px;
+    width: 280px;
+    height: 100%;
+    background: #0f0a1a;
+    border-right: 1px solid var(--bright-violet);
+    z-index: 1002;
+    transition: 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    padding: 60px 30px;
+}
+
+.sidebar.active { left: 0; }
+
+.nav-links { list-style: none; }
+.nav-links li { margin: 25px 0; }
+.nav-links a { color: white; text-decoration: none; font-size: 1.1rem; font-weight: 600; }
+.nav-links a:hover { color: var(--bright-violet); }
+
+.nav-title {
+    color: var(--text-secondary);
+    font-size: 16px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-top: 30px;
+}
+
+.close-btn {
+    position: absolute;
+    top: 20px;
+    right: 25px;
+    font-size: 30px;
+    color: var(--bright-violet);
+    cursor: pointer;
+}
+
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.8);
+    display: none;
+    z-index: 1000;
+    backdrop-filter: blur(5px);
+}
+
+.overlay.active { display: block; }
+
+/* Hero Section */
+h1 { 
+    font-size: 68px; /* Tamanho maior para Computadores/Telas Grandes */
+    font-weight: 800; 
+    margin: 30px 0; 
+    line-height: 1.35;
+    text-align: left;
+}
+
+h1 span { 
+    color: var(--bright-violet); 
+    text-shadow: 0 0 15px rgba(115, 29, 255, 0.6); 
+}
+
+/* Ajuste Responsivo para Mobile (Telas de até 768px de largura) */
+@media (max-width: 768px) {
+    h1 { 
+        font-size: 32px; /* Tamanho menor para telemóveis/celulares */
+        margin: 20px 0;  /* Opcional: reduz a margem no mobile para poupar espaço */
+		text-align: left;
+    }
+}
+.code-window {
+    background: #0f0a1a;
+    border-radius: 12px;
+    text-align: left;
+    max-width: 600px;
+    margin: 40px auto;
+	font-size: 16px;
+    
+    /* AQUI ESTÁ O EFEITO NEON (Borda + Sombra de brilho) */
+    border: 2px solid var(--bright-violet); 
+    box-shadow: 0 0 20px rgba(115, 29, 255, 0.4), 
+                0 0 40px rgba(115, 29, 255, 0.1); 
+    
+    overflow: hidden;
+}
+
+.window-header { background: #1a1429; padding: 12px 20px; display: flex; align-items: center; }
+.dot { height: 10px; width: 10px; border-radius: 50%; display: inline-block; margin-right: 8px; }
+.red { background: #ff5f56; } .yellow { background: #ffbd2e; } .violet { background: var(--bright-violet); }
+
+.code-content { padding: 25px; font-family: monospace; color: #e0d8f0; }
+
+.btn-primary {
+    background-color: var(--bright-violet);
+    color: #fff;
+    padding: 18px 35px;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: 900;
+    display: inline-block;
+    box-shadow: 0 0 20px rgba(115, 29, 255, 0.4);
+	text-align: center;
+	font-size: 16px;
+}
+.cta-group {
+    display: flex;
+    flex-direction: column; /* Coloca o botão e o texto um embaixo do outro */
+    align-items: center;    /* Centraliza horizontalmente */
+    justify-content: center; /* Centraliza verticalmente (se houver altura) */
+    margin-top: 30px;       /* Espaço entre a caixa de código e o botão */
+    width: 100%;            /* Garante que ocupe a largura total para poder alinhar ao meio */
+}
+.stats {
+    text-align: center;
+	font-size: 15px;
+	padding-top: 20px;
+	padding-bottom: 20px;
+}
+.stats-2 {
+    text-align: left;
+	font-size: 15px;
+	padding-top: 1px;
+	padding-bottom: 40px;
+}
+/* Seção de Problemas */
+.problems {
+    padding: 25px 20px;
+	margin-bottom: 20px;
+}
+
+.section-title {
+    font-size: 36px;
+    margin-bottom: 15px;
+	margin-top: 40px;
+    line-height: 1.2;
+}
+
+.section-title strong {
+    color: var(--bright-violet);
+}
+
+.section-subtitle {
+    color: var(--text-secondary);
+    margin-bottom: 50px;
+	font-size: 17px;
+}
+
+/* Grid de Cards */
+.cards-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 25px;
+    margin-top: 40px;
+}
+
+.problem-card {
+    background: #0f0a1a;
+    border: 1px solid #1a1429;
+    padding: 40px 30px;
+    border-radius: 15px;
+    text-align: left;
+    transition: 0.4s;
+    position: relative;
+}
+
+.problem-card:hover {
+    border-color: var(--bright-violet);
+    transform: translateY(-10px);
+}
+
+/* Ícones Neon */
+.icon-box {
+    font-size: 32px;
+    display: flex;                /* Mudamos para flex para centralizar o ícone dentro do círculo */
+    align-items: center;
+    justify-content: center;
+    
+    width: 60px;                  /* Tamanho do círculo */
+    height: 60px;                 /* Tamanho do círculo */
+    border-radius: 50%;           /* Faz ficar redondo */
+    
+    background: rgba(115, 29, 255, 0.1); /* Fundo roxo bem clarinho (transparente) */
+    border: 2px solid var(--bright-violet); /* Borda roxa neon */
+    
+    /* Efeito de brilho neon */
+    box-shadow: 0 0 15px rgba(115, 29, 255, 0.5), 
+                inset 0 0 10px rgba(115, 29, 255, 0.3); 
+    
+    margin-bottom: 35px;          /* Espaço para o texto abaixo */
+    margin-right: auto;
+}
+
+.violet-neon {
+    filter: drop-shadow(0 0 10px var(--bright-violet));
+}
+
+.red-neon {
+     filter: drop-shadow(0 0 10px var(--bright-violet));
+}
+
+.problem-card h3 {
+    font-size: 20px;
+    margin-bottom: 15px;
+    color: #fff;
+    line-height: 1.4;
+}
+
+.problem-card p {
+    color: var(--text-secondary);
+    font-size: 15px;
+    line-height: 1.6;
+}
+/* Container para centralizar o botão abaixo dos cards */
+.cta-problems {
+    margin-top: 35px; /* Espaço entre os cards e o botão */
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+}
+
+/* Reutilizando o estilo do botão e adicionando a pulsação se quiser */
+.btn-neon-pulse {
+    animation: pulse-glow 2s infinite ease-in-out;
+}
+
+@keyframes pulse-glow {
+    0% { box-shadow: 0 0 15px rgba(115, 29, 255, 0.4); transform: scale(1); }
+    50% { box-shadow: 0 0 35px rgba(115, 29, 255, 0.8); transform: scale(1.05); }
+    100% { box-shadow: 0 0 15px rgba(115, 29, 255, 0.4); transform: scale(1); }
+}
+.stats {
+    text-align: center;
+	font-size: 14px;
+	padding-top: 20px;
+	padding-bottom: 20px;
+}
+/* Card de Calculadora/Fechamento */
+.calculator-card {
+    background: #0f0a1a;
+    border: 2px solid var(--bright-violet);
+    border-radius: 20px;
+    padding: 50px 40px;
+    margin-top: 60px;
+    text-align: left;
+    box-shadow: 0 0 30px rgba(115, 29, 255, 0.1);
+    max-width: 900px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.calculator-card h2 {
+    font-size: 24px;
+    margin-bottom: 25px;
+    color: #fff;
+}
+
+.calculator-card p {
+    color: var(--text-secondary);
+    font-size: 15px;
+    line-height: 1.8;
+    margin-bottom: 20px;
+}
+
+/* Destaques de cores */
+.highlight-red {
+    color: #ff5f56;
+    font-weight: 800;
+}
+
+.highlight-green {
+    color: #00ff88; /* Verde neon para destacar lucro/ganho */
+    font-weight: 800;
+}
+
+/* Botão WhatsApp Estilo Imagem */
+.btn-whatsapp {
+    background-color: #731dff; /* Verde oficial WhatsApp */
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+    padding: 20px;
+    border-radius: 100px;
+    text-decoration: none;
+    font-weight: 900;
+    margin-top: 30px;
+    transition: 0.3s;
+    box-shadow: 0 0 20px rgba(115, 29, 255, 0.4);
+	font-size: 32px;
+}
+.btn-whatsapp:hover {
+    box-shadow: 0 0 30px rgba(115, 29, 255, 0.4);
+}
+
+/* Ajuste para Mobile */
+@media (max-width: 768px) {
+    .calculator-card {
+        padding: 30px 20px;
+    }
+    .btn-whatsapp {
+        font-size: 18px;
+    }
+}
+/* Ajuste para Mobile */
+@media (max-width: 768px) {
+    .btn-whatsapp {
+        font-size: 16px; /* Diminuí um pouco para não quebrar linha no celular */
+    }
+}
+/* Seção Solução */
+.solution {
+    padding: 10px 0;
+    background-color: var(--bg-color);
+}
+
+.solution-header {
+	text-align: left;
+    margin-bottom: 30px;
+	font-size: 15px;
+}
+
+.badge-green {
+    color: #00ff88;
+    border: 1px solid #00ff88;
+    padding: 5px 15px;
+    border-radius: 5px;
+    font-size: 19px;
+    font-weight: 800;
+    margin-bottom: 35px;
+	display: table;      /* Ou block, mas table evita que ele ocupe 100% da largura */
+    margin-left: auto;   /* Empurra da esquerda */
+    margin-right: auto;  /* Empurra da direita */
+}
+
+.title-main {
+    font-size: 36px !important;
+    margin-bottom: 20px !important;
+    text-align: left !important;
+    line-height: 1.2 !important;
+}
+
+.title-main strong {
+    color: var(--bright-violet);
+    text-shadow: 0 0 15px rgba(115, 29, 255, 0.5);
+	text-align: left;
+}
+
+/* Cards da Solução */
+.solution-cards {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.s-card {
+    display: flex;
+    align-items: flex-start;
+    gap: 20px;
+    background: #0f0a1a;
+    padding: 30px;
+    border-radius: 15px;
+    border: 1px solid #1a1429;
+    transition: 0.3s;
+}
+
+.s-card:hover {
+    border-color: var(--bright-violet);
+    transform: translateX(10px);
+}
+
+.s-icon {
+    font-size: 32px;
+    display: flex;                /* Mudamos para flex para centralizar o ícone dentro do círculo */
+    align-items: center;
+    justify-content: center;
+    
+    width: 60px;                  /* Tamanho do círculo */
+    height: 60px;                 /* Tamanho do círculo */
+    border-radius: 50%;           /* Faz ficar redondo */
+    
+    background: rgba(115, 29, 255, 0.1); /* Fundo roxo bem clarinho (transparente) */
+    border: 2px solid var(--bright-violet); /* Borda roxa neon */
+    
+    /* Efeito de brilho neon */
+    box-shadow: 0 0 15px rgba(115, 29, 255, 0.5), 
+                inset 0 0 10px rgba(115, 29, 255, 0.3); 
+    
+    margin-bottom: 15px;          /* Espaço para o texto abaixo */
+    margin-right: auto;
+}
+
+.s-text h3 {
+    color: #fff;
+    margin-bottom: 8px;
+    font-size: 20px;
+	text-align: left;
+}
+
+.s-text p {
+    color: var(--text-secondary);
+    font-size: 15px;
+    line-height: 1.6;
+	text-align: left;
+}
+
+.solution-footer {
+    text-align: center;
+    margin-top: 30px;
+}
+
+.solution-footer p {
+    margin-bottom: 25px;
+    font-size: 15px;
+}
+
+/* Ajuste Mobile */
+@media (max-width: 768px) {
+    .s-card {
+        flex-direction: column;
+        text-align: center;
+        align-items: center;
+    }
+    .title-main {
+        font-size: 1.8rem;
+    }
+}
+/* Seção de Serviços */
+.services {
+    padding: 100px 0;
+}
+
+.services-header {
+    text-align: left;
+    margin-bottom: 35px;
+	font-size: 15px;
+}
+
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+}
+
+.service-card {
+    background: #0f0a1a;
+    border: 1px solid #1a1429;
+    padding: 35px;
+    border-radius: 20px;
+    position: relative;
+    transition: 0.4s;
+    display: flex;
+    flex-direction: column;
+}
+
+.service-card:hover {
+    border-color: var(--bright-violet);
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(115, 29, 255, 0.1);
+}
+
+/* Alinhamento do Ícone e da Tag */
+.card-header-flex {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 25px;
+}
+
+/* Tags de Destaque nos Cards */
+.service-tag {
+    font-size: 11px;
+    font-weight: 800;
+    text-transform: uppercase;
+    padding: 4px 10px;
+    border-radius: 8px;
+}
+
+.tag-purple { background: rgba(115, 29, 255, 0.2); color: var(--bright-violet); border: 1px solid var(--bright-violet); }
+.tag-green { background: rgba(0, 255, 136, 0.1); color: #00ff88; border: 1px solid #00ff88; }
+.tag-blue { background: rgba(0, 217, 255, 0.1); color: #00d9ff; border: 1px solid #00d9ff; }
+
+.service-card h3 {
+    font-size: 1.4rem;
+    color: #fff;
+    margin-bottom: 15px;
+    line-height: 1.3;
+}
+
+.service-card p {
+    color: var(--text-secondary);
+    font-size: 0.95rem;
+    line-height: 1.6;
+    margin-bottom: 25px;
+    flex-grow: 1; /* Garante que o Saiba Mais fique sempre no fim */
+}
+
+/* Link Saiba Mais */
+.learn-more {
+    color: #731dff; /* Verde neon igual ao vídeo */
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 0.9rem;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    transition: 0.3s;
+}
+
+.learn-more:hover {
+    gap: 12px; /* Efeito da setinha andando */
+    text-shadow: 0 0 10px #731dff;
+}
+
+/* Reutilizando seu estilo de círculo neon para o icon-box */
+.service-card .icon-box {
+    width: 50px;
+    height: 50px;
+    font-size: 24px;
+    margin-bottom: 0; /* Reset do margin que definimos antes */
+}
+.icon-box, .s-icon {
+    /* ... outras propriedades ... */
+    font-size: 54px; /* Aumenta o tamanho do emoji */
+    
+    /* DICA: Se o emoji ficar grande demais para o círculo, 
+       você também precisa aumentar o círculo aqui: */
+    width: 70px; 
+    height: 70px;
+}
+/* Usamos o caminho completo para o CSS entender que essa regra é a mais importante */
+.service-card .icon-box, 
+.problem-card .icon-box,
+.s-card .s-icon {
+    font-size: 34px !important; /* O !important vai forçar o aumento */
+    
+    /* Se o emoji crescer, o círculo tem que crescer junto para não espremer */
+    width: 60px !important;
+    height: 60px !important;
+    
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    line-height: 1;
+}
+.badge-green {
+    /* Cores da Paleta Leme.Reis */
+    color: var(--bright-violet);
+    border: 1px solid var(--bright-violet);
+    background: rgba(115, 29, 255, 0.1); /* Roxo com 10% de opacidade */
+    
+    /* Brilho Neon Suave */
+    box-shadow: 0 0 10px rgba(115, 29, 255, 0.2);
+    
+    /* Formatação */
+    padding: 6px 16px;
+    border-radius: 100px; /* Deixa as pontas totalmente arredondadas (estilo pílula) */
+    font-size: 21px;      /* Tamanho ideal para etiquetas */
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 1px;  /* Espaçamento entre letras para dar um ar mais moderno */
+    display: inline-block;
+    margin-bottom: 50px;
+	    display: table;      /* Troque inline-block por table */
+    margin: 0 auto 50px auto; /* auto nas laterais centraliza o elemento */
+}
+.badge-red {
+ /* Cores da Paleta Leme.Reis */
+    color: var(--bright-violet);
+    border: 1px solid var(--bright-violet);
+    background: rgba(115, 29, 255, 0.1); /* Roxo com 10% de opacidade */
+    
+    /* Brilho Neon Suave */
+    box-shadow: 0 0 10px rgba(115, 29, 255, 0.2);
+    
+    /* Formatação */
+    padding: 6px 16px;
+    border-radius: 100px; /* Deixa as pontas totalmente arredondadas (estilo pílula) */
+    font-size: 18px;      /* Tamanho ideal para etiquetas */
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 1px;  /* Espaçamento entre letras para dar um ar mais moderno */
+    display: inline-block;
+    margin-bottom: 50px;
+	    display: table;      /* Troque inline-block por table */
+    margin: 0 auto 50px auto; /* auto nas laterais centraliza o elemento */
+}
+.alert-box {
+ /* Cores da Paleta Leme.Reis */
+    color: var(--bright-violet);
+    border: 1px solid var(--bright-violet);
+    background: rgba(115, 29, 255, 0.1); /* Roxo com 10% de opacidade */
+    
+    /* Brilho Neon Suave */
+    box-shadow: 0 0 10px rgba(115, 29, 255, 0.2);
+    
+    /* Formatação */
+    padding: 6px 16px;
+    border-radius: 100px; /* Deixa as pontas totalmente arredondadas (estilo pílula) */
+    font-size: 22px;      /* Tamanho ideal para etiquetas */
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 1px;  /* Espaçamento entre letras para dar um ar mais moderno */
+    display: inline-block;
+    margin-bottom: 50px;
+	text-align: center;
+	    display: table;      /* Troque inline-block por table */
+    margin: 0 auto 50px auto; /* auto nas laterais centraliza o elemento */
+}
+.btn-discovery {
+    background-color: var(--bright-violet); /* Seu roxo neon */
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+    /* Mesmas configurações de tamanho e forma */
+    padding: 20px 40px;
+    border-radius: 100px;
+    text-decoration: none;
+    font-weight: 900;
+    font-size: 22px; /* Ajuste conforme preferir */
+    line-height: 1.2;
+    
+    margin-top: 30px;
+    transition: 0.3s;
+    border: none;
+    cursor: pointer;
+    
+    /* Efeito de brilho neon da sua paleta */
+    box-shadow: 0 0 20px rgba(115, 29, 255, 0.4);
+    display: inline-flex; /* Para ele não ocupar a largura toda da tela sozinho */
+}
+
+.btn-discovery:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 30px rgba(115, 29, 255, 0.6);
+    filter: brightness(1.1);
+}
+
+/* Garante que no mobile ele fique bem ajustado */
+@media (max-width: 768px) {
+    .btn-discovery {
+        font-size: 18px;
+        padding: 15px 30px;
+        width: 100%; /* No celular, botões largos facilitam o clique */
+    }
+}
+.portfolio-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 40px;
+    padding: 20px 0;
+    justify-content: center; /* Centraliza os cards no grid */
+    justify-items: center;   /* Centraliza o conteúdo dentro das células */
+}
+
+/* O Card Moderno */
+.portfolio-card {
+    background: rgba(25, 20, 35, 0.6); /* Efeito Vidro */
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(115, 29, 255, 0.2);
+    border-radius: 24px; /* Arredondamento Caprichado */
+    overflow: hidden;
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    max-width: 380px; /* Evita que o card fique largo demais em telas grandes */
+    width: 100%;
+	margin-top: 20px;
+}
+
+.portfolio-card:hover {
+    transform: translateY(-15px);
+    border-color: var(--bright-violet);
+    box-shadow: 0 20px 40px rgba(115, 29, 255, 0.2);
+}
+
+/* Imagem e Overlay */
+.card-image {
+    position: relative;
+    height: 200px;
+    overflow: hidden;
+}
+
+.card-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: 0.5s;
+}
+
+.portfolio-card:hover .card-image img {
+    scale: 1.1;
+}
+
+.image-overlay {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+}
+
+.tag-status {
+    background: var(--bright-violet);
+    color: white;
+    padding: 5px 12px;
+    border-radius: 50px;
+    font-size: 11px;
+    font-weight: 800;
+    text-transform: uppercase;
+}
+
+/* Corpo do Card */
+.card-body {
+    padding: 25px;
+    text-align: left; /* Mantém o texto alinhado à esquerda dentro do card */
+}
+
+.card-category {
+    display: flex;
+    gap: 8px;
+    margin-bottom: 15px;
+}
+
+.card-body h3 {
+    color: #fff;
+    font-size: 1.4rem;
+    margin-bottom: 10px;
+}
+
+.card-body p {
+    color: #a0a0a0;
+    font-size: 0.9rem;
+    line-height: 1.5;
+    margin-bottom: 25px;
+}
+
+/* Ações/Botões do Card */
+.card-actions {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+}
+
+.btn-view {
+    color: #731dff;
+    text-decoration: none;
+    font-size: 0.95rem;
+    font-weight: 600;
+    opacity: 0.7;
+    transition: 0.3s;
+	font-weight: bold;
+}
+
+.btn-view:hover {
+    opacity: 1;
+    color: var(--bright-violet);
+}
+
+.btn-order {
+    background: linear-gradient(135deg, #731dff 0%, #4b11a8 100%);
+    color: white;
+    padding: 12px 20px;
+    border-radius: 14px;
+    text-decoration: none;
+    font-weight: 800;
+    font-size: 1.05rem;
+    box-shadow: 0 4px 15px rgba(115, 29, 255, 0.3);
+    transition: 0.3s;
+}
+
+.btn-order:hover {
+    box-shadow: 0 8px 25px rgba(115, 29, 255, 0.5);
+    transform: scale(1.05);
+}
+/* Estilo das Etiquetas (Beleza, Agendamento, etc) */
+.card-category span {
+    background: rgba(115, 29, 255, 0.15); /* Fundo roxo suave */
+    color: var(--bright-violet);          /* Seu roxo neon */
+    border: 1px solid var(--bright-violet);
+    
+    padding: 6px 16px;          /* Espaçamento interno */
+    border-radius: 100px;       /* Deixa totalmente arredondado (estilo pílula) */
+    
+    font-size: 12px;            /* Tamanho da fonte */
+    font-weight: 800;           /* Deixa em negrito pesado */
+    text-transform: uppercase;  /* Todas as letras em maiúsculo para um look mais "premium" */
+    letter-spacing: 0.5px;      /* Espaçamento entre as letras */
+    
+    display: inline-block;
+    transition: 0.3s;
+}
+
+/* Efeitozinho de brilho quando passar o mouse por cima (opcional) */
+.card-category span:hover {
+    background: var(--bright-violet);
+    color: #fff;
+    box-shadow: 0 0 15px rgba(115, 29, 255, 0.4);
+}
+.card-body {
+    padding: 30px;
+    /* Esse fundo cria o efeito de "quadrado" separado da imagem */
+    background: #120e1d; 
+    border-radius: 0 0 28px 28px; /* Arredonda só embaixo para encaixar no card */
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+/* Deixa o texto do parágrafo com um respiro maior */
+.card-body p {
+    color: #a0a0a0;
+    font-size: 0.95rem;
+    line-height: 1.6;
+    margin-bottom: 25px;
+    min-height: 70px; /* Garante que todos os cards tenham o mesmo tamanho de texto */
+}
+.badge-showcase {
+    color: var(--bright-violet);
+    border: 1px solid var(--bright-violet);
+    background: rgba(115, 29, 255, 0.1);
+    box-shadow: 0 0 10px rgba(115, 29, 255, 0.2);
+    padding: 6px 16px;
+    border-radius: 100px;
+    font-size: 18.5px;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+
+    /* AJUSTES PARA CENTRALIZAR */
+    display: table;      /* Troque inline-block por table */
+    margin: 0 auto 50px auto; /* auto nas laterais centraliza o elemento */
+}
+/* --- ESTILO AVALIAÇÕES --- */
+.testimonials {
+    padding: 80px 0;
+    background: #05020a;
+    overflow: hidden;
+}
+
+.testimonials-slider {
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+    padding: 20px 0;
+}
+
+.testimonials-track {
+    display: flex;
+    gap: 30px;
+    width: max-content;
+    will-change: transform;
+}
+
+.testimonial-card {
+    background: #0d0a15;
+    border: 1px solid rgba(115, 29, 255, 0.2);
+    border-radius: 28px;
+    padding: 35px;
+    width: 380px;
+    flex-shrink: 0;
+    transition: border-color 0.3s;
+}
+
+.testimonial-card:hover {
+    border-color: #731dff;
+}
+
+.stars {
+    color: #ffb800;
+    margin-bottom: 20px;
+    font-size: 1.1rem;
+}
+
+.testimonial-card p {
+    color: #b0b0b0;
+    font-size: 1rem;
+    line-height: 1.6;
+    margin-bottom: 25px;
+    font-style: italic;
+}
+
+.client-info strong {
+    display: block;
+    color: #fff;
+    font-weight: 800;
+    font-size: 1.2rem;
+}
+
+.client-info span {
+    color: #731dff;
+    font-size: 0.9rem;
+    font-weight: 700;
+    text-transform: uppercase;
+}
+
+.badge-avalia {
+    display: table;
+    margin: 0 auto 20px auto;
+    color: #731dff;
+    border: 1px solid #731dff;
+    background: rgba(115, 29, 255, 0.1);
+    padding: 6px 16px;
+    border-radius: 100px;
+    font-size: 20px;
+    font-weight: 800;
+    text-transform: uppercase;
+	margin-bottom: 50px;
+}
+
+/* Container do Topo do Card (Alinha Estrelas + Google) */
+.card-google-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+/* Ajuste das Estrelas */
+.stars {
+    color: #ffb800;
+    font-size: 1.1rem;
+    letter-spacing: 2px;
+    margin-bottom: 0; /* Reset para alinhar com o SVG */
+}
+
+/* Filtro de sombra suave na logo do Google para combinar com o Neon */
+.google-icon {
+    filter: drop-shadow(0 0 4px rgba(255, 255, 255, 0.15));
+    flex-shrink: 0;
+}
+
+/* Novo Bloco de Perfil do Cliente */
+.client-profile {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-top: auto; /* Garante que fique sempre no rodapé do card se eles variarem de altura */
+}
+
+/* Foto do Usuário Redonda */
+.client-avatar {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid var(--bright-violet); /* Sua paleta de cor integrada na foto */
+    box-shadow: 0 0 10px rgba(115, 29, 255, 0.3);
+}
+
+/* Ajuste dos textos do cliente para alinhar ao lado da foto */
+.client-info {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    text-align: left;
+}
+
+.client-info strong {
+    display: block;
+    color: #fff;
+    font-weight: 800;
+    font-size: 1.05rem;
+}
+
+.client-info span {
+    color: var(--text-secondary); /* Sincronizado com sua variável */
+    font-size: 0.8rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+/* Alinhamento do texto do depoimento */
+.testimonial-card p {
+    text-align: left;
+    color: #b1a2d4;
+    font-size: 0.95rem;
+    line-height: 1.6;
+    margin-bottom: 25px;
+    font-style: normal; /* Removido o itálico para parecer mais um comentário real da web */
+}
+
+.testimonials-track {
+    display: flex;
+    gap: 30px;
+    width: max-content;
+    will-change: transform;
+    cursor: grab; /* Transforma o ponteiro do mouse em uma mão aberta de arrastar */
+    user-select: none; /* Impede que textos ou fotos fiquem azuis selecionados ao arrastar rápido */
+}
+
+.testimonial-card {
+    background: #0d0a15;
+    border: 1px solid rgba(115, 29, 255, 0.2);
+    border-radius: 28px;
+    padding: 35px;
+    
+    /* MODIFICAÇÃO AQUI: Trocado 'width' por 'min-width' e adicionado 'max-width' para celulares */
+    min-width: 380px; 
+    max-width: 85vw; /* Impede o card de ficar maior que a tela em celulares pequenos */
+    
+    flex-shrink: 0;
+    transition: border-color 0.3s;
+}
+
+@media (max-width: 480px) {
+    .testimonial-card {
+        min-width: 290px; /* Reduz ligeiramente o tamanho do card em celulares bem pequenos */
+        padding: 20px;    /* Reduz o espaçamento interno para sobrar mais espaço pro texto */
+    }
+}
